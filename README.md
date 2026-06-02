@@ -7,21 +7,21 @@
 - [x] Import Pandas
 - [x] Series
 - [x] DataFrame
-- [ ] Reading CSV Files
-- [ ] Data Inspection
+- [x] Reading CSV Files
+- [x] Data Inspection
 
 ### Indexing & Selection
 
-- [ ] loc[]
-- [ ] iloc[]
-- [ ] Boolean Indexing
-- [ ] Column Selection
-- [ ] Row Selection
+- [x] loc[]
+- [x] iloc[]
+- [x] Boolean Indexing
+- [x] Column Selection
+- [x] Row Selection
 
 ### Data Cleaning
 
-- [ ] isna()
-- [ ] notna()
+- [x] isna()
+- [x] notna()
 - [ ] fillna()
 - [ ] dropna()
 - [ ] duplicated()
@@ -29,7 +29,7 @@
 
 ### Data Manipulation
 
-- [ ] sort_values()
+- [x] sort_values()
 - [ ] sort_index()
 - [ ] rename()
 - [ ] astype()

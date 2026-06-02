@@ -69,7 +69,7 @@
 
 ### Lookup Functions
 
-- [ ] XLOOKUP
+- [x] XLOOKUP
 - [ ] VLOOKUP
 - [ ] HLOOKUP
 - [ ] INDEX
@@ -95,7 +95,7 @@
 - [ ] SEARCH
 - [ ] SUBSTITUTE
 - [ ] REPLACE
-- [ ] TEXT
+- [x] TEXT
 
 ---
 
