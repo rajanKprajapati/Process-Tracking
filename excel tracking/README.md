@@ -58,20 +58,20 @@
 ### Array Functions
 
 - [x] FILTER
-- [x] UNIQUE
+- [x] UNIQUE-
 - [x] SORT
 - [x] SORTBY
 - [x] SEQUENCE
 - [x] TRANSPOSE
-- [x] SUMPRODUCT
+- [x] SUMPRODUCT-
 
 ---
 
 ### Lookup Functions
 
-- [x] XLOOKUP
-- [ ] VLOOKUP
-- [ ] HLOOKUP
+- [x] XLOOKUP-
+- [x] VLOOKUP-
+- [x] HLOOKUP-
 - [ ] INDEX
 - [ ] MATCH
 - [ ] INDEX + MATCH
