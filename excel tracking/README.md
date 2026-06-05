@@ -1,5 +1,26 @@
 # 📊 Excel Learning Tracker
-
+## MOST IMPORTAINT FUCTIONS LIST:
+- LEFT
+- RIGHT
+- MID
+- LEN
+- TRIM
+- UPPER
+- LOWER
+- PROPER
+- FIND
+- SEARCH
+- SUBSTITUTE
+- REPLACE
+- TEXT
+- VALUE
+- CONCAT
+- TEXTJOIN
+- IFERROR
+- VLOOKUP
+- XLOOKUP
+- INDEX
+- MATCH
 ## 2️⃣ Formulas & Functions
 
 ### Logical Functions
@@ -72,49 +93,51 @@
 - [x] XLOOKUP-
 - [x] VLOOKUP-
 - [x] HLOOKUP-
-- [ ] INDEX
-- [ ] MATCH
-- [ ] INDEX + MATCH
+- [x] INDEX
+- [x] MATCH
+- [x] INDEX + MATCH
 
 ---
 
 ### Text Functions
-
-- [ ] LEFT
-- [ ] RIGHT
-- [ ] MID
-- [ ] LEN
-- [ ] TRIM
-- [ ] UPPER
-- [ ] LOWER
-- [ ] PROPER
-- [ ] CONCAT
-- [ ] CONCATENATE
-- [ ] TEXTJOIN
-- [ ] FIND
-- [ ] SEARCH
-- [ ] SUBSTITUTE
-- [ ] REPLACE
 - [x] TEXT
-
+- [x] TEXTSPLIT
+- [x] TEXTJOIN
+- [x] TEXTBREFORE
+- [x] TEXTAFTER
+- [x] LEFT
+- [x] RIGHT
+- [x] MID
+- [x] LEN
+- [x] TRIM
+- [x] UPPER
+- [x] LOWER
+- [x] PROPER
+- [x] CONCAT
+- [x] CONCATENATE
+- [x] TEXTJOIN
+- [x] FIND
+- [x] SEARCH
+- [x] SUBSTITUTE
+- [x] REPLACE
 ---
 
 ### Date & Time Functions
 
-- [ ] TODAY
-- [ ] NOW
-- [ ] DATE
-- [ ] DAY
-- [ ] MONTH
-- [ ] YEAR
+- [x] TODAY
+- [x] NOW
+- [x] DATE
+- [x] DAY
+- [x] MONTH
+- [x] YEAR
 - [ ] WEEKDAY
 - [ ] EOMONTH
 - [ ] DATEDIF
 - [ ] NETWORKDAYS
 - [ ] WORKDAY
-- [ ] HOUR
-- [ ] MINUTE
-- [ ] SECOND
+- [x] HOUR
+- [x] MINUTE
+- [x] SECOND
 
 ---
 

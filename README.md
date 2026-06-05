@@ -23,14 +23,14 @@
 - [x] isna()
 - [x] notna()
 - [ ] fillna()
-- [ ] dropna()
+- [x] dropna()
 - [ ] duplicated()
 - [ ] drop_duplicates()
 
 ### Data Manipulation
 
 - [x] sort_values()
-- [ ] sort_index()
+- [x] sort_index()
 - [ ] rename()
 - [ ] astype()
 - [ ] apply()
@@ -40,16 +40,16 @@
 
 - [ ] Querying Data
 - [ ] Multiple Conditions
-- [ ] isin()
-- [ ] between()
+- [x] isin()
+- [x] between()
 
 ### Aggregation
 
-- [ ] groupby()
-- [ ] agg()
-- [ ] value_counts()
-- [ ] unique()
-- [ ] nunique()
+- [x] groupby()
+- [x] agg()
+- [x] value_counts()
+- [x] unique()
+- [x] nunique()
 
 ### Combining Data
 
@@ -59,7 +59,7 @@
 
 ### Date & Time
 
-- [ ] to_datetime()
+- [x] to_datetime()
 - [ ] dt accessor
 - [ ] date filtering
 
