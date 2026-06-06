@@ -3,6 +3,7 @@ Chatrs:
 --line charts
 --pie charts
 --bar/column charts
+-- Solve 15 minimum questions 
 -charts advance
 --sckatter plot
 --map charts
@@ -12,4 +13,6 @@ Chatrs:
 --hiskar charts
 -sparklines
 --cells inside charts
+
+
 
