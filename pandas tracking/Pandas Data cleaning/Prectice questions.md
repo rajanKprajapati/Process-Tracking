@@ -141,293 +141,317 @@ Filter percentages above 50.
 
 ---
 
-### 13. Countries with most missing salaries
-- solution: 
+# IPL Dataset Practice Questions
+
+## Missing Values Analysis
+
+### 13. Cities with the Most Missing Match Information
+
 **Hint:**
-1. Filter missing salaries
-2. Group by country
-3. Count rows
+1. Choose a column that may have missing values (e.g., `city`)
+2. Filter missing values
+3. Count occurrences
 
 ---
 
-### 14. Companies having at least one salary available
+### 14. Venues Having at Least One Match Recorded
 
 **Hint:**
-1. Remove missing salaries
-2. Count unique companies
+1. Remove missing venues
+2. Count unique venues
 
 ---
 
-### 15. Percentage missing for every column
+### 15. Percentage Missing for Every Column
 
 **Hint:**
 
 ```python
-(isna().sum() / len(df)) * 100
+(df.isna().sum() / len(df)) * 100
 ```
 
 ---
 
-### 16. Remote jobs with missing salary
-
-**Hint:**
-- Remote
-- Salary missing
-
-Combine using AND (`&`)
-
----
-
-### 17. Jobs where skills are available
+### 16. Matches with Missing Player of Match
 
 **Hint:**
 
 ```python
-job_skills.notna()
+df['player_of_match'].isna()
 ```
 
 ---
 
-### 18. Countries where over 50% salaries are missing
+### 17. Matches Where Match Referee Information Is Available
 
 **Hint:**
-1. Group by country
-2. Calculate missing percentage per country
+
+```python
+df['match_referee'].notna()
+```
+
+---
+
+### 18. Venues Where More Than 50% of Player of Match Entries Are Missing
+
+**Hint:**
+1. Group by venue
+2. Calculate missing percentage
 3. Filter > 50%
 
 ---
 
 # Filtering
 
-### 19. Remote Data Analyst jobs
-
-**Hint:**
-- `job_title_short`
-- `job_work_from_home`
-
----
-
-### 20. Remote Data Scientist jobs with salary available
-
-**Hint:**
-- Data Scientist
-- Remote
-- Salary exists
-
----
-
-### 21. Jobs from USA, Germany, Canada
+### 19. Matches Won by Chennai Super Kings (CSK)
 
 **Hint:**
 
 ```python
-isin([...])
+df['winner'] == 'Chennai Super Kings'
 ```
 
 ---
 
-### 22. Jobs posted by top 5 companies
+### 20. Matches Where Mumbai Indians Won After Losing the Toss
+
+**Hint:**
+Conditions:
+
+- winner = Mumbai Indians
+- toss_winner ≠ Mumbai Indians
+
+Combine using `&`
+
+---
+
+### 21. Matches Played in Mumbai, Delhi, and Bengaluru
+
+**Hint:**
+
+```python
+df['city'].isin(['Mumbai', 'Delhi', 'Bengaluru'])
+```
+
+---
+
+### 22. Matches Played at Top 5 Most Frequently Used Venues
 
 **Hint:**
 
 Step 1:
-- Find top 5 companies
+
+```python
+top_5_venues = df['venue'].value_counts().head(5)
+```
 
 Step 2:
-- Use `isin()`
-
----
-
-### 23. Jobs with health insurance and no degree requirement
-
-**Hint:**
-- Use AND (`&`)
-
----
-
-### 24. Data Engineer jobs outside USA
-
-**Hint:**
-- Use NOT (`!=`)
-
----
-
-### 25. Jobs with salary above average
-
-**Hint:**
-
-First calculate:
 
 ```python
-avg_salary
-```
-
-Then filter:
-
-```python
-salary > avg_salary
+df['venue'].isin(top_5_venues.index)
 ```
 
 ---
 
-### 26. Top 20 highest-paying remote jobs
+### 23. Matches Won by More Than 50 Runs
 
 **Hint:**
-1. Filter remote jobs
-2. Sort salary descending
+
+```python
+df['win_by_runs'] > 50
+```
+
+---
+
+### 24. Matches Not Played in Mumbai
+
+**Hint:**
+
+```python
+df['city'] != 'Mumbai'
+```
+
+---
+
+### 25. Matches Having Total Runs Greater Than Average
+
+**Hint:**
+
+Create:
+
+```python
+df['total_runs'] = df['team1_runs'] + df['team2_runs']
+```
+
+Calculate average total runs and filter above average matches.
+
+---
+
+### 26. Top 20 Highest Scoring Matches
+
+**Hint:**
+1. Create `total_runs`
+2. Sort descending
 3. Take first 20
 
 ---
 
 # Sorting
 
-### 27. Top 15 highest-paying companies
+### 27. Top 15 Venues with Highest Average Match Runs
 
 **Hint:**
-1. Group by company
-2. Calculate mean salary
+1. Create `total_runs`
+2. Group by venue
+3. Calculate mean
+4. Sort descending
+
+---
+
+### 28. 20 Most Recent Matches
+
+**Hint:**
+1. Convert date column to datetime
+2. Sort descending
+
+---
+
+### 29. Top 10 Cities with Highest Average Match Runs
+
+**Hint:**
+1. Group by city
+2. Average total runs
 3. Sort descending
 
 ---
 
-### 28. 20 newest jobs with salary
+### 30. Top 25 Closest Matches (Won by Fewest Runs)
 
 **Hint:**
-1. Remove missing salaries
-2. Sort by date descending
 
----
+```python
+sort_values('win_by_runs')
+```
 
-### 29. Top 10 highest-paying countries
-
-**Hint:**
-1. Group by country
-2. Calculate average salary
-3. Sort descending
-
----
-
-### 30. Top 25 highest-paying remote jobs
-
-**Hint:**
-1. Filter remote jobs
-2. Sort salary descending
-3. Take first 25
+Take first 25.
 
 ---
 
 # GroupBy
 
-### 31. Average salary for each job title
+### 31. Average Runs Scored by Each Winning Team
 
 **Hint:**
 
 Group by:
 
 ```python
-job_title_short
+winner
 ```
 
-Calculate mean salary.
+Calculate average runs scored.
 
 ---
 
-### 32. Average salary by country
+### 32. Average Total Runs by City
 
 **Hint:**
 
 Group by:
 
 ```python
-job_country
+city
 ```
 
-Calculate mean.
+Calculate mean total runs.
 
 ---
 
-### 33. Average salary by remote status
+### 33. Average Runs Based on Toss Decision
 
 **Hint:**
 
 Group by:
 
 ```python
-job_work_from_home
+toss_decision
 ```
 
-Calculate mean.
+Calculate average total runs.
 
 ---
 
-### 34. Number of jobs by company
+### 34. Number of Matches Won by Each Team
 
 **Hint:**
-1. Group by company
+1. Group by winner
 2. Count rows
 
 ---
 
-### 35. Average salary by country and remote status
+### 35. Average Total Runs by City and Toss Decision
 
 **Hint:**
 
 ```python
-groupby(['job_country', 'job_work_from_home'])
+groupby(['city', 'toss_decision'])
 ```
 
 ---
 
 # agg()
 
-### 36. Country salary statistics
+### 36. City Match Statistics
 
 Find:
-- Mean
-- Max
-- Min
-- Count
+
+- Mean Runs
+- Maximum Runs
+- Minimum Runs
+- Match Count
 
 **Hint:**
-- Use a single `agg()` call
+Use a single `agg()` call.
 
 ---
 
-### 37. Job title salary statistics
+### 37. Team Winning Statistics
 
 Find:
-- Mean
-- Median
-- Max
+
+- Mean Runs
+- Median Runs
+- Maximum Runs
 
 **Hint:**
-- Group by title
-- Use aggregation list
+Group by winner and use aggregation list.
 
 ---
 
-### 38. Company statistics
+### 38. Venue Statistics
 
 Find:
-- Job count
-- Average salary
-- Highest salary
+
+- Match Count
+- Average Total Runs
+- Highest Total Runs
 
 **Hint:**
-- Mix count and salary aggregations
+Use multiple aggregations.
 
 ---
 
-# Real Analyst Questions
+# Real IPL Analyst Questions
 
-### 39. Country Salary Report
+### 39. Venue Performance Report
 
 Create:
 
-| Country | Jobs Posted | Avg Salary |
-|----------|------------|------------|
+| Venue | Matches Played | Avg Total Runs |
+|--------|---------------|----------------|
+| ... | ... | ... |
 
-Sorted by Avg Salary descending.
+Sorted by Avg Total Runs descending.
 
 **Hint:**
 
@@ -439,18 +463,20 @@ sort_values()
 
 ---
 
-### 40. Executive Summary
+### 40. IPL Executive Summary
 
 Create a report containing:
 
-- Total jobs
-- Total companies
-- Total countries
-- Remote %
-- Average salary
-- Highest paying country
-- Highest paying job title
-- Company posting most jobs
+- Total Matches
+- Total Cities
+- Total Venues
+- Total Teams
+- Average Match Runs
+- Highest Scoring City
+- Highest Scoring Venue
+- Most Successful Team
+- Most Common Toss Decision
+- Most Frequent Player of the Match
 
 **Hint:**
 
@@ -458,19 +484,77 @@ Create a report containing:
 shape
 nunique
 groupby
-mean
 value_counts
+mean
 sort_values
 ```
 
 ---
 
-# Challenge Level
+# Advanced Analyst-Level Questions
+
+### 41. Does Winning the Toss Increase the Chance of Winning the Match?
+
+**Objective:**
+Compare toss winners and match winners to calculate win percentage.
+
+---
+
+### 42. Which Venues Favor Batting First?
+
+**Objective:**
+Analyze venue-wise outcomes based on toss decisions and match winners.
+
+---
+
+### 43. Which Team Performs Best in High-Scoring Matches (350+ Total Runs)?
+
+**Objective:**
+Filter high-scoring matches and analyze winning teams.
+
+---
+
+### 44. Which Player Has Won the Most Player of the Match Awards?
+
+**Objective:**
+Rank players by number of awards.
+
+---
+
+### 45. Which Umpire Has Officiated the Most Matches?
+
+**Objective:**
+Analyze umpire participation frequency.
+
+---
+
+### 46. Which Team Has the Highest Average Winning Margin?
+
+**Objective:**
+Compare teams using run and wicket victory margins.
+
+---
+
+### 47. Home Advantage Analysis
+
+**Objective:**
+Determine whether teams perform better in specific cities.
+
+---
+
+### 48. Toss Decision Trend by Season
+
+**Objective:**
+Analyze how batting-first and fielding-first decisions changed over seasons.
+
+---
+
+# Difficulty Breakdown
 
 | Questions | Difficulty |
 |------------|------------|
-| 1–10 | Easy |
-| 11–18 | Easy-Medium |
+| 13–18 | Easy-Medium |
 | 19–30 | Medium |
 | 31–38 | Medium-Hard |
 | 39–40 | Analyst Level |
+| 41–48 | Industry-Level Analyst |

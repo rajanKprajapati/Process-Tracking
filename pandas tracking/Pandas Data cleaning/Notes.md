@@ -15,3 +15,5 @@ Today
 df.groupby("job_title_short")[["salary_year_avg","salary_hour_avg"]].agg(["min","max","median","mean"])
 df["job_title_short"].unique()
 df.groupby("job_title_short")[["salary_year_avg","salary_hour_avg"]].min()
+
+
