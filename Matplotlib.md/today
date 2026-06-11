@@ -1,0 +1,9 @@
+-matplot web intro
+-plt.plot()
+-plpt.show()
+-ploting
+-pandas series and .values,.index
+-plot use series or dataframe
+-columns of a dataframe is also known as the series 
+-plt.bar()
+-plt.barh() {using here .sort_values()}
